@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1(){
+            return this.salary*0.5;
+        }
+
+        // constructor function (class)
+        function Employee(a,b,c){
+            this.id=a;
+            this.name=b;
+            this.salary=c;
+            this.computeTax=function(){
+              return this.salary*0.10;  
+            }
+            this.computeAllowance=f1;
+        } 
+
+        var emp1=new Employee(101,"Ram",5000);
+        console.log(emp1)
+        console.log(emp1.computeTax())
+        console.log(emp1.computeAllowance())
+
+    </script>
+</body>
+</html>
